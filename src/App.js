@@ -1,12 +1,14 @@
 import React from 'react';
 import './App.css';
 import suhas from './Assets/suhas.jpeg';
+import resume from './Assets/SuhasTellatakula_Resume.pdf';
+
 
 function App() {
   const handleDownload = () => {
     const downloadLink = document.createElement('a');
-    downloadLink.href = './Assets/SuhasTellatakula_Resume.pdf'; // Replace with the actual path to your PDF file
-    downloadLink.download = 'SuhasTellatakula_Resume'; // Specify the file name for download
+    downloadLink.href = {resume}; // Replace with the actual path to your PDF file
+    downloadLink.download = 'SuhasResume.pdf'; // Specify the file name for download
     document.body.appendChild(downloadLink);
     downloadLink.click();
     document.body.removeChild(downloadLink);
@@ -49,7 +51,8 @@ function App() {
            </h1>
            <p class="description">Self-motivated and experienced Software Engineer focused on designing and developing robust scalable enterprise applications. Skilled at full stack development of web applications, distributed systems, requirement and complexity analysis, object-oriented programming, data structures, algorithms, problem solving, communication, interpersonal skills.</p>
            <div class="action__btns">
-             <button class="portfolio" onClick={handleDownload}>Download Resume</button>
+                <a href={resume} download = 'SuhasResume.pdf'><button class="portfolio">Download Resume</button></a>
+
            </div>
          </div>
          <div class="image">
@@ -69,7 +72,6 @@ function App() {
                <h4>Jan 2023 - May 2024</h4>
                <h4>Graduate Teaching Assistant @University of North Texas, Denton, Texas, USA </h4>
                <p class ="bullets">Collaborated with Professor on Software Engineering class of 120 students for 3 semesters, while supervising 3 graders. Mentored 15+ teams each semester with SDLC methodologies and activities from requirement to testing phase.</p>
-
                <h4>Sep 2019 - Aug 2022</h4>
                <h4>Software Engineer @Bosch Global Software Technologies, Bangalore, India </h4>
                <p class ="bullets">Developed backend of enterprise application Smart diagnostic network communication, a cross-functional harmonized automation framework for OEM’s design, configuration, auto code generation, validation following Agile scrum model. Crafted webpages, Swagger RESTful APIs for SmartDNC Microservices such as Code generators, Excel-XML converters, Enum Auto mapper with diverse input formats for network and diagnostic stacks in spring framework. Spearheaded a team of 4 associates globally to deliver client customizations adeptly by providing specific automated workflows and boosted efficiency and performance by almost 40% in time and resources for client OEMs.</p>
@@ -103,15 +105,11 @@ function App() {
              <li></li>
              <li></li>
             <li><a class ="bullets" href="mailto:suhastellatakula@gmail.com"><span>suhastellatakula@gmail.com</span></a></li>
-
-
        </ul>
        <p>Suhas 2024 </p>
      </section>
    </body>
  </html>
-
-
 
   );
 }
